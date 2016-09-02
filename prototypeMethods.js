@@ -17,7 +17,7 @@ exports.retryFilename = function (attempt, file, callback) {
 		if (err) return callback(err);
 		self.fileExists(filename, function (err, exists) {
 			if (err) return callback(err);
-			if (exists) return self._retryFilename(attempt + 1, file, callback);
+			if (exists) return self.retryFilename(attempt + 1, file, callback);
 			callback(null, filename);
 		});
 	});

@@ -1,6 +1,6 @@
 {
   "name": "keystone-storage-namefunctions",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple functions for generating filenames",
   "main": "index.js",
   "scripts": {

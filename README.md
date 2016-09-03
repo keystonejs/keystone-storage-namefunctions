@@ -11,7 +11,9 @@ Bundled with [KeystoneJS](http://keystonejs.com)
 * `originalFilename` Return the original filename provided in the file object
 * `randomFilename` Generate a random filename
 
-## `prototypeMethods`
+## Other modules in this package
+
+### `prototypeMethods`
 
 Two methods are included to help reduce code repetition in adapters that can be
 added to the adapter `prototype` when you want to handle filename generation:
@@ -47,7 +49,7 @@ Adapter.prototype.uploadFile = function (file, callback) {
 };
 ```
 
-## `ensureCallback` utility
+### `ensureCallback` utility
 
 The `ensureCallback` method is also included, to standardise sync filename
 method call signatures. Use it like this:

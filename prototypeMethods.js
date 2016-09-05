@@ -9,7 +9,7 @@
 	`this.options.retryAttempts`
 */
 exports.retryFilename = function (attempt, file, callback) {
-	var self = self;
+	var self = this;
 	if (attempt > self.options.retryAttempts) {
 		return callback(Error('Unique filename could not be generated; Maximum attempts exceeded'));
 	}

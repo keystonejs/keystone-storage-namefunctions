@@ -1,5 +1,6 @@
 var crypto = require('crypto');
 var fs = require('fs');
+var path = require('path');
 
 // # Simple functions for generating filenames.
 
@@ -12,7 +13,7 @@ function filenameFromBuffer (buffer, extension) {
 		.replace(/=/g, '')
 		.slice(0, 16);
 
-	if (extension) filename = filename + '.' + extension;
+	if (extension) filename = filename + extension;
 
 	return filename;
 }
@@ -51,6 +52,6 @@ exports.originalFilename = function (file) {
 exports.randomFilename = function (file, i, callback) {
 	crypto.randomBytes(16, function (err, data) {
 		if (err) return callback(err);
-		return callback(null, filenameFromBuffer(data, file.extension));
+		return callback(null, filenameFromBuffer(data, path.extname(file.originalname)));
 	});
 };

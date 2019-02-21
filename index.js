@@ -39,7 +39,7 @@ exports.contentHashFilename = function (file, i, callback) {
 		if (calledCallback) return;
 		calledCallback = true;
 		// Data is a node Buffer.
-		callback(null, filenameFromBuffer(data, file.extension));
+		callback(null, filenameFromBuffer(data, path.extname(file.originalname)));
 	});
 };
 
